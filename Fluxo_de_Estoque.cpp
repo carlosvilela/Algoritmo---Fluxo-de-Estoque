@@ -273,6 +273,8 @@ int main(int argc, char** argv[]){
 					if (quant > Cadastro->quantidade[i]){
 
 						cout << endl << endl << "Estoque Insuficiente ...";
+
+						system("pause>null");
 					}
 					else {
 
