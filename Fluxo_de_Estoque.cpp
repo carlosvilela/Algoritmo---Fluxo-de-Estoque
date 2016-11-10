@@ -76,7 +76,7 @@ void Sistema_Inicializar::Inicializar(void) {
 
 
 void Sistema_Inicializar::limpar_ponteiros(void) {
-	
+
 	Cadastro->id = NULL;
 	free(Cadastro->id); // desaloca ponteiro com free pois iniciou com malloc
 
@@ -113,71 +113,82 @@ void Sistema_Inicializar::Finalizar(void) {
 
 	Sistema.limpar_ponteiros();
 
-	 exit(0);
+	exit(0);
 }
+
+
+static int num_produtos = 2; // quantidade de produtos diferentes a ser lido é 10 conforme algoritmo
+
 
 
 void Exibir_Produtos_Cadastrados(void); // declara função. a atribuição está abaixo da função principal int main ()
 
+// atribuir instruções a função Exibir
+void Exibir_Produtos_Cadastrados(void){
+
+	system("cls");
+
+	cout << endl << "==============================================================================";
+	cout << endl << "=                            FLUXO DE ESTOQUE                                =";
+	cout << endl << "==============================================================================";
+	cout << endl;
+
+	int i = 0;
+	//num_produtos está definido fora da função
+
+	for (i = 0; i <= (num_produtos - 1); i++){ // para (i <= 9) faça
+
+		cout << "| Codigo: " << Cadastro->id[i] << " | Descricao: " << Cadastro->descricao[i];
+		cout << " | Quantidade: " << Cadastro->quantidade[i] << " | Valor: " << Cadastro->valor_unitario[i] << endl;
+	}
+
+	cout << "------------------------------------------------------------------------------" << endl;
+
+}
 
 /**
-
-DESTA PARTE EM DIANTE É O ALGORITMO PROPRIAMENTE DITO
-
-SERÁ EXECUTADO CONFORME EXERCICIO PROPOSTO
-
-
+FUNÇÂO PRINCIPAL MAIN
 **/
 
-static int num_produtos = 10; // quantidade de produtos diferentes a ser lido é 10 conforme algoritmo
 
 int main(int argc, char** argv[]){
 
 	Sistema.Inicializar();
 
-	/** INICIO ALGORITMO **/
-
-	/*
-	Passo 1 - Fazer a leitura de produtos para colocar no estoque.
-	As informações de cada produto são um código numérico, uma descrição,
-	quantidade de itens e o valor unitário de cada item.
-	Deverão ser lidos 10 produtos diferentes;
-	*/
-
 	int i; // declara variável
-
-	//i = (int*)malloc(sizeof(int));
 
 	i = 0; // atribui valor a variável; i = 0;
 
 	int *codg; // cria ponteiro, será usado para achar o iten que deseja alterar
 
-	//num_produtos está definido  acima do main, fora de funções, para poder ser usado em todo o programa e ter facilidade para definir seu valor
+	//num_produtos está definido fora da função
 
-	while (i <= (num_produtos-1)) { // Enquanto (*i <= 9) faça
+
+	/** Cadastra os produtos no estoque **/
+
+	while (i <= (num_produtos - 1)) { // Enquanto (*i <= 9) faça
 
 
 		system("cls");
 
 		cout << endl << "==============================================================================";
-		cout << endl << "=                                                                            =";
 		cout << endl << "=                            FLUXO DE ESTOQUE                                =";
 		cout << endl << "=                          Cadastro de Produtos                              =";
 		cout << endl << "==============================================================================";
-		cout << endl << endl << endl;
+		cout << endl << endl;
 
 
 		cout << "Insira o Codigo do Produto " << (i + 1) << ": "; // Escreva "insira código: ";
 		cin >> Cadastro->id[i]; // Leia codigo;
-
-		cout << endl << endl << "Insira a Descricao do Produto " << (i + 1) << ": "; // Escreva "insira descrição: ";
 		cin.ignore(); // soluciona problema de pular para proxima leitura, limpa o \n do buffer gerado na entrada anterior ao pressionar enter
-		getline(cin, Cadastro->descricao[i]); // Leia descricao; - aceita espaços - (tente usar no máximo 28 caracteres para não ficar muito grande)
 
-		cout << endl << endl << "Insira a Quantidade do Produto " << (i + 1) << ": "; // Escreva "insira quantidade: ";
+		cout << endl <<"Insira a Descricao do Produto " << (i + 1) << ": "; // Escreva "insira descrição: ";
+		getline(cin, Cadastro->descricao[i]); // Leia descricao; - aceita espaços
+
+		cout << endl << "Insira a Quantidade do Produto " << (i + 1) << ": "; // Escreva "insira quantidade: ";
 		cin >> Cadastro->quantidade[i]; // Leia quantidade;
 
-		cout << endl << endl << "Insira o Valor unitario do Produto " << (i + 1) << ": "; // Escreva "insira valor unitario: ";
+		cout << endl <<"Insira o Valor unitario do Produto " << (i + 1) << ": "; // Escreva "insira valor unitario: ";
 		cin >> Cadastro->valor_unitario[i]; // Leia valor_unitario;
 
 		system("cls"); // limpar tela
@@ -186,21 +197,11 @@ int main(int argc, char** argv[]){
 
 	}
 
-	/*
-	Passo 2 - A partir da leitura inicial, poderão ser realizadas as seguintes operações:
-
-	- Inclusão de novos itens no estoque, para produtos já cadastrados anteriormente no primeiro passo.
-	Nesse momento basta que seja lido o código do produto e quantos itens deseja-se inserir. Após isso,
-	atualizar a quantidade de itens no estoque.
-
-	- Retirada de tens no estoque. Nesse momento basta que seja lido o código do produto e quantos itens deseja-se retirar.
-	Caso a quantidade a ser retirada for maior do que atual em estoque, deve ser dada uma mensagem dizendo
-	"Estoque Insuficiente". Caso contrário atualizar a quantidade em estoque.
-
-	As operações do passo 2 serão realizados dentro de uma estrutura de repetição,
+	/**
+	realiza as operações: Incluir e Retirar produtos do Estoque
 	sempre fazendo a leitura do tipo de operação desejada: "I" ou "R",
 	Inclusão ou Retirada. Quando for digitada uma operação diferente dessas duas, a repetição deve finalizar.
-	*/
+	**/
 
 	char *opcao; // caractere opcao; - está fora do while, pois não precisa ser declarado a cada loop
 
@@ -209,31 +210,29 @@ int main(int argc, char** argv[]){
 
 		Exibir_Produtos_Cadastrados(); // exite produtos cadastrados
 
-		//char *opcao; // caractere opcao; - está fora do while, pois não precisa ser declarado a cada loop
-		opcao = (char*)malloc(sizeof(char)); // aloca ponteiro, muito util para nao haver vazamento de memória - o alocamento é realizado a cada loop, pois é desalocado sempre no final do bloco afim de liberar memória
+		opcao = (char*)malloc(sizeof(char)); // aloca ponteiro
 
 		cout << "Digite I para Incluir, R para retirar Quantidade do estoque (I/R): ";
 		cin >> *opcao; // Ler opcao;
 
-		switch (*opcao){ 
+		switch (*opcao){
 
 		case ('i') : // se ( opcao == 'i' ou opcao == 'I')  então
 		case ('I') :
 
-				   codg = (int*)malloc(sizeof(int)); // aloca ponteiro, este ponteiro está no inicio da função principal main()
+				   codg = (int*)malloc(sizeof(int)); // aloca ponteiro
 			*codg = 0;
-
-			// é necessário que faça o teste para saber se a alocação do ponteiro está correta, se o ponteiro retornar NULL pode dar um erro grave e/ou fechar o programa de forma inesperada
-			// fiz esse teste em alguns ponteiros, não em todos, mas se fosse um programa profissional deve obrigatoriamente realizar os testes em todos os ponteiro. 
 
 			cout << endl << endl << "Insira o Codigo do Produto: ";
 			cin >> *codg;
 
-			for (i = 0; i <= (num_produtos - 1); i++){ // este i está sendo usado varias vezes, é interessante que seja modificado para ser ponteiro afim de evitar vazamento de memória
-				
+			for (i = 0; i <= (num_produtos - 1); i++){ 
+
 				if (*codg == Cadastro->id[i]){ // verifica onde está o produtos
 
 					int quant; quant = 0; // interessante fazer ponteiro
+					
+					cout << endl << "Produto: " << Cadastro->descricao[i] << endl;
 
 					cout << endl << "Insira a quantidade de produtos que deseja Incluir: ";
 					cin >> quant; // insere valor a variavel
@@ -241,10 +240,10 @@ int main(int argc, char** argv[]){
 					Cadastro->quantidade[i] = Cadastro->quantidade[i] + quant; // soma quantidade ao produto
 
 				}
-			
+
 			}
 
-				   break;  
+			break;
 
 		case ('r') : // senão se ( opcao == 'r' ou opcao == 'R') então
 		case ('R') :
@@ -252,20 +251,19 @@ int main(int argc, char** argv[]){
 
 
 
-				   codg = (int*)malloc(sizeof(int)); // aloca ponteiro, este ponteiro está no inicio da função principal main()
+				   codg = (int*)malloc(sizeof(int)); // aloca ponteiro
 			*codg = 0;
-
-			// é necessário que faça o teste para saber se a alocação do ponteiro está correta, se o ponteiro retornar NULL pode dar um erro grave e/ou fechar o programa de forma inesperada
-			// fiz esse teste em alguns ponteiros, não em todos, mas se fosse um programa profissional deve obrigatoriamente realizar os testes em todos os ponteiro. 
 
 			cout << endl << endl << "Insira o Codigo do Produto: ";
 			cin >> *codg;
 
-			for (i = 0; i <= (num_produtos - 1); i++){ // este i está sendo usado varias vezes, é interessante que seja modificado para ser ponteiro afim de evitar vazamento de memória
+			for (i = 0; i <= (num_produtos - 1); i++){ 
 
 				if (*codg == Cadastro->id[i]){ // verifica onde está o produtos
 
 					int quant; quant = 0; // interessante fazer ponteiro
+
+					cout << endl << "Produto: " << Cadastro->descricao[i] << endl;
 
 					cout << endl << "Insira a quantidade de produtos que deseja Retirar: ";
 					cin >> quant; // insere valor a variavel
@@ -285,21 +283,24 @@ int main(int argc, char** argv[]){
 			}
 
 
-				   break; // fimSe;
+			break; // fimSe;
 
 		default:
-			
+
 			system("cls"); // limpa tela
 
 			Exibir_Produtos_Cadastrados(); // exite produtos cadastrados
 
 
-			int total_estoque = 0; // não precisa ser ponteiro, pois não terá um uso significativo ao ponto de correr risco de vazamento de memória
-			for (i = 0; i <= (num_produtos-1); i++){ // calcula quantidade total em estoque
+			int total_estoque = 0; 
+			float valor_total_estoque = 0;
+			for (i = 0; i <= (num_produtos - 1); i++){ // calcula quantidade total em estoque
 
-				total_estoque = total_estoque + Cadastro->quantidade[i];
+				total_estoque = (int) total_estoque + Cadastro->quantidade[i];
+				valor_total_estoque = valor_total_estoque + Cadastro->valor_unitario[i];
 			}
-			cout << endl << "Total em Estoque: " << total_estoque;// exite valor em estoque
+			cout << endl << "Quantidade Total em Estoque: " << total_estoque;// exibe Quantidade em estoque
+			cout << endl << "Valor Total em Estoque: " << valor_total_estoque;// exibe Valor em estoque
 
 
 			cout << endl << endl << "Pressione ENTER para finalizar programa" << endl;
@@ -319,32 +320,11 @@ int main(int argc, char** argv[]){
 
 	/** FIM ALGORITMO **/
 
-		cout << endl << endl << "Pressione ENTER para finalizar o programa...";
-		system("pause>null");
+	cout << endl << endl << "Pressione ENTER para finalizar o programa...";
+	system("pause>null");
 
 	Sistema.Finalizar(); // finaliza programa com segurança
 
 	return 0;
 }
 
-// atribuir instruções a função Exibir
-void Exibir_Produtos_Cadastrados(void){
-
-	system("cls");
-
-	cout << endl << "==============================================================================";
-	cout << endl << "=                            FLUXO DE ESTOQUE                                =";
-	cout << endl << "==============================================================================";
-	cout << endl;
-
-	int i;
-	//num_produtos está definido  acima do main, fora de funções, para poder ser usado em todo o programa e ter facilidade para definir seu valor
-
-	for (i = 0; i <= (num_produtos-1); i++){ // para (i <= 9) faça
-
-		cout << endl << "< Codigo > " << Cadastro->id[i] << " < Descricao > " << Cadastro->descricao[i] << " <Quantidade> " << Cadastro->quantidade[i] << endl;
-	}
-
-	cout << "------------------------------------------------------------------------------"<< endl;
-
-}
