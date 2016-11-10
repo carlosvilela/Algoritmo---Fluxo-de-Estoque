@@ -117,7 +117,7 @@ void Sistema_Inicializar::Finalizar(void) {
 }
 
 
-static int num_produtos = 2; // quantidade de produtos diferentes a ser lido é 10 conforme algoritmo
+static int num_produtos = 10; // quantidade de produtos diferentes a ser lido é 10 conforme algoritmo
 
 
 
