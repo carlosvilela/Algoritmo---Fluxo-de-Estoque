@@ -12,7 +12,7 @@ descricao: array [0..max] of string[20]; {Variavel com caracteres}
 IR: char;
 quebralinha: Text;
 
-estoque,quant, cod, i, x, contador: integer;
+estoque, valor_estoque, quant, cod, i, x, contador: integer;
 
 begin {inicio do programa}
 
@@ -138,6 +138,7 @@ writeln;
 textcolor(black);  {cor do texto de entrada}
 
 estoque:= estoque + quantidade[i];
+valor_estoque = valor_estoque + valor[i];
 
 i:= i+1;
 end;
@@ -148,7 +149,8 @@ end;
 writeln('--------------------------------------------------------------------------');
 writeln;
 
-writeln ('Estoque Total: ', estoque);
+writeln ('Quantidade Total em Estoque: ', estoque);
+writeln ('Valor Total em Estoque: ', valor_estoque);
 
 readln;
 readln;
