@@ -20,4 +20,6 @@ int main (int argc, char** argv[]){
 	
 	printf("Nome: %s; Salario: R$ %.2f; INSS: R$ %.2f", nome, salario, INSS);
 	
+	return 0;
+	
 }
