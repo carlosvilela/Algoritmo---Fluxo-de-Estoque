@@ -7,3 +7,22 @@ Idade >> 30
 
 Fulano – 30 anos
 */
+
+
+#include "stdlib.h"
+
+int main(int argc, char** argv[]){
+	
+	char nome[50];
+	int idade;
+
+	printf("Digite seu nome >> ");
+	scanf("%s",&nome);
+	
+	printf("Idade >> ");
+	scanf("%i",&idade);
+	
+	printf("%s - %i", nome, idade);
+	
+	return 0;
+}
