@@ -12,9 +12,9 @@ int main (int argc, char** argv[]){
 	printf("Insira a distancia em km: ");
 	scanf("%f",&DistanciaKM);
 	
-	DistanciaCM = (DistanciaKM/1000);
+	DistanciaCM = (DistanciaKM*1000); // km hm dam M cm dm mm
 	
-	printf("A Distancia %.2fkm e equivalente a %.2fcm", DistanciaKM, DistanciaCM);
+	printf("A Distancia %.4fkm e equivalente a %.4fcm", DistanciaKM, DistanciaCM);
 	
 	return 0;
 }
