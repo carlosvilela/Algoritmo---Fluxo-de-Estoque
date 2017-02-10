@@ -26,7 +26,7 @@ int main (int argc, char** argv[]){
 
 	printf("\nS = %i", S);
 	printf("\nR = %i", R);
-	printf("\nD = %.12f", D);
+	printf("\nD = %.4f", D);
 	
 	return 0;
 }
