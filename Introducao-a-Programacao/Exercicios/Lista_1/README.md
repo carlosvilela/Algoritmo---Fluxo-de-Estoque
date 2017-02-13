@@ -1,34 +1,32 @@
-Associação Carioca de Ensino Superior
-Centro Universitário Carioca
-
-Professora Ma. Catiúscia Borges – Introdução à Programação
-INTRODUÇÃO À PROGRAMAÇÃO – LINGUAGEM C
-
-LISTA 01
-
-1- Faça um programa que exiba na tela o seu nome e o seu curso, numa mesma linha.
-Exemplo: Catiuscia Borges – Matematica
-
-2- Faça um programa que exiba na tela o seu nome e o seu curso, em linhas distintas.
-Exemplo: Catiuscia Borges
- Matematica
-
+Associação Carioca de Ensino Superior<br>
+Centro Universitário Carioca<br>
+<br>
+Professora Ma. Catiúscia Borges – Introdução à Programação<br>
+INTRODUÇÃO À PROGRAMAÇÃO – LINGUAGEM C<br>
+<br>
+LISTA 01<br>
+<br>
+1- Faça um programa que exiba na tela o seu nome e o seu curso, numa mesma linha.<br>
+Exemplo: Catiuscia Borges – Matematica<br>
+<br>
+2- Faça um programa que exiba na tela o seu nome e o seu curso, em linhas distintas.<br>
+Exemplo: Catiuscia Borges<br>
+ Matematica<br>
+<br>
 3- Faça um programa que leia o nome de um aluno o seu curso e exiba na tela o seu nome e o
-seu curso.
-Use duas variáveis do tipo char denominadas aluno e curso.
+seu curso.<br>
+Use duas variáveis do tipo char denominadas aluno e curso.<br>
 
-4- Descreva o funcionamento do programa abaixo, ou seja, o que ele faz?
-'#'include <stdio.h>
-int main( )
-{
-int x;
-scanf("%d",&x);
-printf("\n%d",x);
-return(0);
-}
-_____________________________________________________________________________
-__________________________________________________________________________
-
+4- Descreva o funcionamento do programa abaixo, ou seja, o que ele faz?<br>
+'#'include <stdio.h><br>
+int main( )<br>
+{<br>
+int x;<br>
+scanf("%d",&x);<br>
+printf("\n%d",x);<br>
+return(0);<br>
+}<br>
+<br>
 5- Observe o programa e sem compila-lo determine a saída do programa:
 '#'include<stdio.h>
 main(){
