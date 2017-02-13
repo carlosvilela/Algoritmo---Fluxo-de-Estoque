@@ -18,7 +18,7 @@ seu curso.
 Use duas variáveis do tipo char denominadas aluno e curso.
 
 4- Descreva o funcionamento do programa abaixo, ou seja, o que ele faz?
-#include <stdio.h>
+'#'include <stdio.h>
 int main( )
 {
 int x;
@@ -30,7 +30,7 @@ _____________________________________________________________________________
 __________________________________________________________________________
 
 5- Observe o programa e sem compila-lo determine a saída do programa:
-#include<stdio.h>
+'#'include<stdio.h>
 main(){
 char A, B, C, D;
  A = 'B';
