@@ -6,31 +6,35 @@ S = (A+B)^3
 R = (C+B)^2
 */
 
-#include "stdlib.h"
-#include "math.h"
+#include <stdio.h>
+#include <math.h>
 
 int main (int argc, char** argv[]){
-	
-	int A, B, C;
-	double D, S, R;
-	
-	printf("Insira o Primeiro numero: ");
-	scanf("%i", &A);
-	
-	printf("Insira o Segundo numero: ");
-	scanf("%i", &B);
-	
-	printf("Insira o Terceiro numero: ");
-	scanf("%i", &C);
-	
-	S = pow((A+B),3);
-	R = pow((C+B),2);
-	D = (R+S)/(2+R);
-	
-	printf("D = %.2f", D);
-	
-	return 0;
+
+int A, B, C, S, R;
+float D, RS, doisR;
+
+printf("Insira o (A)Primeiro numero inteiro e positivo: ");
+scanf("%d", &A);
+
+printf("Insira o (B)Segundo numero inteiro e positivo: ");
+scanf("%d", &B);
+
+printf("Insira o (C)Terceiro numero inteiro e positivo: ");
+scanf("%d", &C);
+
+S = pow((A+B),3);
+R = pow((C+B),2);
+RS = (float) (R+S); // (float) é o conversor natural de inteiro para ponto flutuante
+doisR = (float) (2+R); // (float) é o conversor natural de inteiro para ponto flutuante
+D = RS/doisR;
+
+printf ("\n\nSabendo que: \n");
+printf("S = (A+B)^3 e R = (C+B)^2 e D = (R+S)/(2+R). logo:\n");
+
+printf("\nS = %d", S);
+printf("\nR = %d", R);
+printf("\nD = %.4f", D);
+
+return 0;
 }
-	
-	
-	
