@@ -16,7 +16,7 @@ dezena = (x%100)/10;
 unidade = (x - (centena*100))%10;
 
 
-printf("%d Centena(s), %d Dezena(s), %d Unidade(s)", centena, dezena, unidade);
+printf("\n\n%d Centena(s), %d Dezena(s), %d Unidade(s)", centena, dezena, unidade);
 
 
 return 0;
