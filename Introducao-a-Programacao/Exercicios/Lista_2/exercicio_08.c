@@ -32,7 +32,7 @@ main(){
 			}else{
 				printf("Adulto");
 			}
-			}
-			}
+		}
 	}
+}
 }
