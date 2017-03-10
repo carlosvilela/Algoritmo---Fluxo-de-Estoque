@@ -39,14 +39,14 @@ O algoritmo deve escrever o número do aluno, suas notas, a média dos exercíci
 */
 
 #include <stdio.h>
-#include <stdlib.h>
+#include <stdlib.h> // usar malloc
 
 int main (int argc, char** argv[]){
 	
 	int matricula; // de 0 a 5 = 6
 	float MA, Nota1, Nota2, Nota3, ME;
 	char conceito;
-	char* status = (char*) malloc(sizeof(char[10]));
+	char* status = (char*) malloc(sizeof(char[10])); // char estilo string de 10 posicoes
 	
 	printf("Insira o Numero de Identificacao do Aluno: ");
 	scanf("%6d", &matricula); // le apenas os primeiros 6 algarismos
@@ -94,7 +94,9 @@ int main (int argc, char** argv[]){
 	printf("\n\nIdentificacao do Aluno (Matricula): %d;\n\nNota1 = %.2f; Nota2 = %.2f; Nota3 = %.2f;\n\nMedia dos Exercicios = %.2f; ", matricula, Nota1, Nota2, Nota3, ME);
 	printf("\n\nConceito: %c; Situacao do Aluno: %s\n\nMedia de Aproveitamento: %.2f", conceito, status, MA);
 	
-	
+	// desalocar ponteiro string
+	status = NULL;
+	free(status);
 	
 	return 0;
 }
