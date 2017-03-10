@@ -1,7 +1,6 @@
 /*
 Elabore um programa em C que dada a idade de um nadador classifica-o em uma das
 seguintes categorias:
-
 Infantil A = 5 - 7 anos
 Infantil B = 8-10 anos
 Juvenil A = 11-13 anos
@@ -18,39 +17,47 @@ main(){
 
 while(idade!=9999){
 
-	printf("Insira a idade do morador: ");
-	scanf("%d", &idade);
-
-
 
 if (idade<=0 && idade <5){
 	printf("A idade %d nao compreende a idade igual ou superior a 5", idade);
 }else{
 
+	printf("Insira a idade do morador [9999 para fechar]: ");
+	scanf("%d", &idade);
 	
 	switch(idade){
 		
 			case 5 ... 7:
-			printf("\n\nInfantil A");
+			printf("Infantil A");
 			break;
+			
 			case 8 ... 10:
-			printf("\n\nInfantil B");
+			printf("Infantil B");
 			break;
+			
 			case 11 ... 13:
-			printf("\n\nInfantil C");
+			printf("Infantil C");
 			break;
+			
 			case 14 ... 17:
-			printf("\n\nInfantil D");
+			printf("Infantil D");
 			break;
+			
+			case(9999):
+				break;
 		
 		default:
 			
-		printf("\n\nAdulto");
+		printf("Adulto");
 		
 	};
 }
+
+printf("\n\nPressione ENTER para continuar...");
 system("Pause>>null");
 system("cls");
+
+
 
 }
 	
