@@ -19,7 +19,7 @@ int main(int argc, char** argv[]){
 
 while(idade!=9999){
 
-	printf("Insira a idade do morador [9999 para fechar]: ");
+	printf("Insira a idade do nadador [9999 para fechar]: ");
 	scanf("%d", &idade);
 	
 	switch(idade){
