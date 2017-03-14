@@ -7,9 +7,11 @@ Juvenil A = 11-13 anos
 Juvenil B = 14-17 anos
 Adulto = maiores de 18 anos
 */
+
 #include <stdio.h>
 #include <stdlib.h>
-main(){
+
+int main(int argc, char** argv[]){
 	
 	int idade;
 	
@@ -17,15 +19,14 @@ main(){
 
 while(idade!=9999){
 
-
-if (idade<=0 && idade <5){
-	printf("A idade %d nao compreende a idade igual ou superior a 5", idade);
-}else{
-
 	printf("Insira a idade do morador [9999 para fechar]: ");
 	scanf("%d", &idade);
 	
 	switch(idade){
+		
+			case 0 ... 4:
+					printf("\nA idade %d nao compreende a idade minima exigida", idade);
+			break;
 		
 			case 5 ... 7:
 			printf("Infantil A");
@@ -44,6 +45,10 @@ if (idade<=0 && idade <5){
 			break;
 			
 			case(9999):
+				printf("%d significa finalizar.", idade);
+				printf("\n\nPressione ENTER para Finalizar Programa...");
+				system("Pause>>null");
+				exit(0);
 				break;
 		
 		default:
@@ -51,15 +56,13 @@ if (idade<=0 && idade <5){
 		printf("Adulto");
 		
 	};
+	printf("\n\nPressione ENTER para continuar...");
+	system("Pause>>null");
+	system("cls");
 }
 
-printf("\n\nPressione ENTER para continuar...");
-system("Pause>>null");
-system("cls");
 
 
 
-}
-	
-
+return 0;
 }
