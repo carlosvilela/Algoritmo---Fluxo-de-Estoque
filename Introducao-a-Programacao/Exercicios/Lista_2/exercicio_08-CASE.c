@@ -37,11 +37,11 @@ while(idade!=9999){
 			break;
 			
 			case 11 ... 13:
-			printf("Infantil C");
+			printf("Juvenil A");
 			break;
 			
 			case 14 ... 17:
-			printf("Infantil D");
+			printf("Juvenil B");
 			break;
 			
 			case(9999):
