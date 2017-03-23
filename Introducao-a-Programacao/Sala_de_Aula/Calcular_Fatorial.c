@@ -8,6 +8,8 @@ int main (int argc, char** argv[]){
 	printf ("Insira o numero: ");
 	scanf("%d", &x);
 	
+	printf ("\n%d! => ", x);
+	
 	i=1;
 	fat = 1;
 	
