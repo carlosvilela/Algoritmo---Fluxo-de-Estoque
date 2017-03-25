@@ -20,7 +20,6 @@ http://www.geradorcpf.com/algoritmo_do_cpf.htm
 
 main(){
 	
-	int flag = 1;
 	int CPF[11] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 	
 	int somatorio1, digito1, somatorio2, digito2;
