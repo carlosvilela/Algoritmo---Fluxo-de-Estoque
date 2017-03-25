@@ -1,3 +1,18 @@
+/*
+Faça um programa que leia o número de um CPF, exiba-o e informe se ele é válido ou não.
+
+Ex.:
+
+Informe o CPF << 11144477735
+
+CPF 111.444.777-35 Valido
+
+O link abaixo pode ajudar:
+
+http://www.geradorcpf.com/algoritmo_do_cpf.htm
+*/
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
