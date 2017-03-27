@@ -1,5 +1,12 @@
 /*
-
+04- Elabore um algoritmo que leia duas variáveis do tipo String (S1 e S2) de mesmo comprimento e
+troque os seus conteúdos. Exemplo:
+S1 := ‘INFORMÁTICA’;
+S2 := ‘TECNOLOGIAS’;
+Após a execução do algoritmo os conteúdos de S1 e S2 serão:
+S1 := ‘TECNOLOGIAS’;
+S2 := ‘INFORMÁTICA’;
+Obs: Crie uma versão do algoritmo que troque apenas os caracteres das posições PARES. 
 */
 
 #include <stdio.h>
