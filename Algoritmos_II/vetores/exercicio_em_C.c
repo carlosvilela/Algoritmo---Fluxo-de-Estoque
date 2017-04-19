@@ -1,3 +1,7 @@
+/*
+Ler 5 notas; calcular a media; exibir a media, maior nota, quantos sao acima da media
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 
