@@ -1,3 +1,11 @@
+/*
+01- Elabore um algoritmo que:
+•	Leia uma matriz MAT inteira de 3 linhas e 4 colunas para a memória (por linha).
+•	Imprima todos os números pares que ocorrem na matriz MAT, bem como as posições da matriz onde essa condição se verifica.
+
+*/
+
+
 #include <stdio.h>
 #include <stdlib.h>
 
