@@ -1,3 +1,5 @@
+{01 - Faça um algoritmo que leia números inteiros positivos e imprima no final qual o maior e menor número lido. O algoritmo deve parar a leitura quando for lido um número igual a zero.
+
 program Maior_Menor_inteiro;
 
 uses crt; {usar o delay, clrscr, }
