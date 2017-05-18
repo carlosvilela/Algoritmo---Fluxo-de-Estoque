@@ -19,9 +19,9 @@ void coeficientes(){
 	if (d > 0){
 		printf("\n\nA equacao possui duas raizes reais e diferentes...");
 		
-		x1 = (((b)*(-1)) + d)/(2*a);
+		x1 = (((b)*(-1)) + pow(d, 0.5))/(2*a);
 		
-		x2 = (((b)*(-1)) - d)/(2*a);
+		x2 = (((b)*(-1)) - pow(d, 0.5))/(2*a);
 		
 		
 		printf("X1 = %.2f\nX2 = %.2f\n\n", x1, x2);
