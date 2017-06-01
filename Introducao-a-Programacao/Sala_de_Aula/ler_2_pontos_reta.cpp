@@ -69,13 +69,13 @@ b = y1 - (a*x1);
 
 
 
-printf("\n\na = (%.2f - %.2f)/(%.2f - %.2f)\na = %.2f\n", y1, y2, x1, x2, a);
-printf("\nb = %.2f - (%.2f * %.2f)\nb = %.2f", y1, a, x1, b);
+printf("\n\na = (%.2f - ( %.2f ))/(%.2f - ( %.2f ))\na = %.2f\n", y1, y2, x1, x2, a);
+printf("\nb = %.2f - (%.2f * ( %.2f ))\nb = %.2f", y1, a, x1, b);
 
 
 if (a!=0 && b !=0){
 
-printf("\n\ny = %.2fx + %.2f\n\n", a, b);
+printf("\n\ny = %.2fx + ( %.2f )\n\n", a, b);
 
 }else{
 	
