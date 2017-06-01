@@ -58,7 +58,6 @@ printf("Eq. da Reta : y = y1 => y = %.2f", y1);
 
 
 
-
 a = (y2-y1)/(x2-x1);
 b = y1 - (a*x1);
 
